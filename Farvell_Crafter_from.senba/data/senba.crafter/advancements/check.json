@@ -1,0 +1,66 @@
+{
+  "criteria": {
+    "clear": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:paper"
+            ],
+            "nbt": "{senba.crafter-kill_item:1b}"
+          }
+        ]
+      }
+    },
+    "item_frame": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:item_frame",
+              "nbt": "{Facing:1b}"
+            }
+          },
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {}
+          }
+        ]
+      }
+    },
+    "place": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:glow_item_frame"
+          ],
+          "nbt": "{CustomModelData:1008}"
+        }
+      }
+    },
+    "crafter": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "minecraft:crafting_table"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "clear",
+      "item_frame",
+      "place",
+      "crafter"
+    ]
+  ],
+  "rewards": {
+    "function": "senba.crafter:clear"
+  }
+}
+
