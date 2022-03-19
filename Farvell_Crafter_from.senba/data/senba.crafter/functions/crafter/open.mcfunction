@@ -2,7 +2,7 @@
 
 
 #樽の開閉音は耳障りなのでとりまストップサウンドする 開時のみ
-execute unless entity @s[tag=senba.crafter-open] run function senba.crafter:crafter/stopsound
+execute unless entity @s[tag=senba.crafter-open] run function senba.crafter:crafter/begin
 
 
 #レシピを生成したい
@@ -14,7 +14,7 @@ execute unless entity @s[tag=senba.crafter-recipe] unless block ~ ~ ~ barrel{Ite
 
 
 #アイテムを記憶させる 緊急時に使用
-data modify entity @s Item.tag.senba-Items set from block ~ ~ ~ Items
+data modify entity @s Item.tag.senba-Items[{Slot:15b}] set from block ~ ~ ~ Items[{Slot:15b}]
 
 #クラフトレシピがあるかのファンクションを読み込む
 tag @s[tag=senba.crafter-recipe] remove senba.crafter-recipe
