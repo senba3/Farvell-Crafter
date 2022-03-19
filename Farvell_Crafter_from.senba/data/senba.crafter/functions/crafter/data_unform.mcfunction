@@ -84,7 +84,6 @@ scoreboard objectives add senba.dummy dummy
 
    #クラフト準備のタグ
     tellraw @p[tag=senba.crafter-looking] [{"text":"tag @s[type=!player] add senba.craft+"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"UUID[0]"}]
-    tellraw @p[tag=senba.crafter-looking] [{"text":"tag @s[type=!player] add senba.crafter-recipe"}]
 
    #クラフト欄にアイテムがあったとき用
     tellraw @p[tag=senba.crafter-looking] [{"text":"execute as @s[tag="},{"text":"senba.craft+"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"UUID[0]"},{"text":"] unless block ~ ~ ~ barrel{Items:["},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"Item.tag.goods"},{"text":"]}"},{"text":" run function senba.crafter:crafter/craft"}]
@@ -101,7 +100,6 @@ scoreboard objectives add senba.dummy dummy
    execute if data block ~ ~ ~ Items[{Slot:19b}] run tellraw @p[tag=senba.crafter-looking] [{"text":"execute store result entity @s Item.tag.unform."},{"block":"~ ~ ~","nbt":"Items[{Slot:19b}].Slot"},{"text":" byte 1 run execute if entity @e[type=item,tag=senba.crafter-slot,distance=..1,nbt={Item:"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"Item.tag.crafter[6]"},{"text":"}]"}]
    execute if data block ~ ~ ~ Items[{Slot:20b}] run tellraw @p[tag=senba.crafter-looking] [{"text":"execute store result entity @s Item.tag.unform."},{"block":"~ ~ ~","nbt":"Items[{Slot:20b}].Slot"},{"text":" byte 1 run execute if entity @e[type=item,tag=senba.crafter-slot,distance=..1,nbt={Item:"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"Item.tag.crafter[7]"},{"text":"}]"}]
    execute if data block ~ ~ ~ Items[{Slot:21b}] run tellraw @p[tag=senba.crafter-looking] [{"text":"execute store result entity @s Item.tag.unform."},{"block":"~ ~ ~","nbt":"Items[{Slot:21b}].Slot"},{"text":" byte 1 run execute if entity @e[type=item,tag=senba.crafter-slot,distance=..1,nbt={Item:"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"Item.tag.crafter[8]"},{"text":"}]"}]
-   tellraw @p[tag=senba.crafter-looking] [{"text":"execute store result entity @s Item.tag.unform.All byte 1 run execute if entity @e[type=item,tag=senba.crafter-slot]"}]
    
    execute if data block ~ ~ ~ Items[{Slot: 1b}] run tellraw @p[tag=senba.crafter-looking] [{"text":"execute unless data entity @s {Item:{tag:{unform:{"},{"block":"~ ~ ~","nbt":"Items[{Slot: 1b}].Slot"},{"text":":"},{"block":"~ ~ ~","nbt":"Items[{Slot: 1b}].Count"},{"text":"}}}} run tag @s remove senba.craft+"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"UUID[0]"}]
    execute if data block ~ ~ ~ Items[{Slot: 2b}] run tellraw @p[tag=senba.crafter-looking] [{"text":"execute unless data entity @s {Item:{tag:{unform:{"},{"block":"~ ~ ~","nbt":"Items[{Slot: 2b}].Slot"},{"text":":"},{"block":"~ ~ ~","nbt":"Items[{Slot: 2b}].Count"},{"text":"}}}} run tag @s remove senba.craft+"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"UUID[0]"}]
@@ -129,7 +127,7 @@ scoreboard objectives add senba.dummy dummy
  tellraw @p[tag=senba.crafter-looking] [{"text":"---------------------------------","color": "gray"}]
    #
    tellraw @p[tag=senba.crafter-looking] [{"text":"execute if entity @s[tag=!senba.crafter-recipe,tag="},{"text":"senba.craft+"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"UUID[0]"},{"text":"] unless data block ~ ~ ~ {Items:"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"Item.tag.crafter"},{"text":"} run function senba.crafter:crafter/space"}]
-   tellraw @p[tag=senba.crafter-looking] [{"text":"execute if entity @s[tag=!senba.crafter-recipe] if block ~ ~ ~ barrel{Items:"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"Item.tag.crafter"},{"text":"} run function "},{"selector":"@p"},{"text":":craft"}]
+   tellraw @p[tag=senba.crafter-looking] [{"text":"execute if entity @s[tag=!senba.crafter-recipe] data block ~ ~ ~ {Items:"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"Item.tag.crafter"},{"text":"} run function "},{"selector":"@p"},{"text":":craft"}]
 
  tellraw @p[tag=senba.crafter-looking] [{"text":"\n---------------------------------\n---------------------------------\n","color": "gray"}]
 

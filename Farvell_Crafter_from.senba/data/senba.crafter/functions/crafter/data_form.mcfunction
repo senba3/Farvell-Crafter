@@ -92,7 +92,7 @@ scoreboard objectives add senba.dummy dummy
  tellraw @p[tag=senba.crafter-looking] [{"text":"---------------------------------","color": "gray"}]
    #
    tellraw @p[tag=senba.crafter-looking] [{"text":"execute if entity @s[tag=!senba.crafter-recipe,tag="},{"text":"senba.craft+"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"UUID[0]"},{"text":"] unless data block ~ ~ ~ {Items:"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"Item.tag.crafter"},{"text":"} run function senba.crafter:crafter/space"}]
-   tellraw @p[tag=senba.crafter-looking] [{"text":"execute if entity @s[tag=!senba.crafter-recipe] if block ~ ~ ~ barrel{Items:"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"Item.tag.crafter"},{"text":"} run function "},{"selector":"@p"},{"text":":craft"}]
+   tellraw @p[tag=senba.crafter-looking] [{"text":"execute if entity @s[tag=!senba.crafter-recipe] if data block ~ ~ ~ {Items:"},{"entity":"@e[type=item,limit=1,tag=senba.crafter-get]","nbt":"Item.tag.crafter"},{"text":"} run function "},{"selector":"@p"},{"text":":craft"}]
 
  tellraw @p[tag=senba.crafter-looking] [{"text":"\n---------------------------------\n---------------------------------\n","color": "gray"}]
 

@@ -64,7 +64,7 @@
  item replace block ~ ~ ~ container.14 with paper{senba.crafter-kill_item:1b,senba.crafter-Titem:9b,CustomModelData:4,display:{Name:'""'}}
  execute as @s[tag=!senba.crafter-recipe] run item replace block ~ ~ ~ container.15 with paper{senba.crafter-kill_item:1b,senba.crafter-Titem:10b,CustomModelData:3,display:{Name:'""'}}
  item replace block ~ ~ ~ container.16 with paper{senba.crafter-kill_item:1b,senba.crafter-Titem:11b,CustomModelData:1,display:{Name:'""'}}
- item replace block ~ ~ ~ container.17 with paper{senba.crafter-kill_item:1b,senba.crafter-Titem:12b,CustomModelData:5,display:{Name:'""'}}
+ item replace block ~ ~ ~ container.17 with paper{senba.crafter-kill_item:1b,senba.crafter-Titem:12b,CustomModelData:5,display:{Name:'{"text":"bunch button","italic":false,"Bold":"true"}'}}
  
  item replace block ~ ~ ~ container.18 with paper{senba.crafter-kill_item:1b,senba.crafter-Titem:13b,CustomModelData:1,display:{Name:'""'}}
  item replace block ~ ~ ~ container.22 with paper{senba.crafter-kill_item:1b,senba.crafter-Titem:14b,CustomModelData:1,display:{Name:'""'}}
