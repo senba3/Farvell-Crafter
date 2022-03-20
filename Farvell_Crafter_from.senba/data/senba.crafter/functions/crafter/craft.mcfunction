@@ -31,6 +31,7 @@ data merge entity @s {Tags:[senba.R.crafter,senba.crafting_table]}
 
 
 #アイテムの数を減らす 小数点以下はすべて切り捨てされる仕様を利用
+#  1. {Slot}が無ければ生成   2. 1tick前と今の作業台の{Slot}の内容が同じかを検知   3. 同じであればCountを1減らす
  #1
  execute unless data entity @s Item.tag.senba-Items[{Slot: 1b}] run data modify entity @s Item.tag.senba-Items append value {Slot:1b}
  execute store result storage senba.crafter All.check byte 1 run data modify entity @s Item.tag.senba-Items[{Slot: 1b}] set from block ~ ~ ~ Items[{Slot: 1b}]
